@@ -1,5 +1,5 @@
 import sh from 'shelljs'
-shell.cd("..");
+sh.cd("..");
 
 sh.exec("npx @leothorp/npm-package-template@latest test-pkg")
 sh.rm("-rf", "./test-pkg")

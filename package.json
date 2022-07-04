@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "babel src -d dist",
-    "test": "node tests/run.js"
+    "test": "node tests/run.js",
+    "repub-and-test": "bash -c 'source ~/.bash_profile && npm-pub test && sleep 2 && npm run test'"
   },
   "engines": {
     "node": "^14 || ^16 || >=18"
