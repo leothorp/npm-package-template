@@ -1,9 +1,13 @@
-good reference: https://medium.com/swlh/how-to-publish-an-es6-module-to-npm-43dda8aabbf
+Notes/References
 
-ES6 module reference: https://medium.com/digio-australia/migrating-an-npm-package-to-use-es-modules-d59877963d61
+-ES6 module reference: https://medium.com/digio-australia/migrating-an-npm-package-to-use-es-modules-d59877963d61
 -uses conditional exports: https://nodejs.org/api/packages.html#conditional-exports
 
-(just do the latter: no need to compile. look at how nanoid is distributed/package.json for reference.)
+-partially modelled after the nanoid package.
+
+-assumes the user will handle compilation for the browser themselves
+
+Steps taken
 1. create dir
 2. git init
 3. npm init
@@ -15,12 +19,23 @@ ES6 module reference: https://medium.com/digio-australia/migrating-an-npm-packag
 
   "sideEffects": false, if that is the case
 
-8. (for esm) in package.json:
+8. in package.json:
 ```
   "exports": "src/index.js", //instead of "main"
   "type": "module",
 ```
 9. add repo/author to package.json 
-10. make gh repo (assumes public desired, --private if not):
-
+10. make gh repo with github cli (assumes public desired, --private if not):
 gh repo create --source=. --remote=upstream --public --push
+
+11. for cli: 'bin' dir, entrypoint file/package.json entry
+12.  echo "{}" > .prettierrc
+13. (assumes npm account exists) use bash_profile func npm-pub. example: npm-pub "new commit message"
+function npm-pub() {
+git add .
+git commit -m $1
+ npm version patch && \
+ npm publish && \
+ git push origin HEAD && \
+ git push --tags
+}

@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-function print(msg) {
-    process.stdout.write(msg + '\n')
-}
-  print('hello!')
+
+//can use a package like 'commander' for CLI flag handling
+import { main } from "../src";
+
+main()

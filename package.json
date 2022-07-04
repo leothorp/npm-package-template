@@ -1,12 +1,11 @@
 {
   "name": "npm-package-template",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d dist",
-    "dev": ""
+    "test": "node tests/run.js"
   },
   "engines": {
     "node": "^14 || ^16 || >=18"
@@ -30,5 +29,6 @@
   },
   "dependencies": {
     "nanoid": "^4.0.0"
-  }
+  },
+  "bin": "./bin/npm-package-template.js"
 }
