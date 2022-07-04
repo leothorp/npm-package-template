@@ -15,7 +15,7 @@ sh.cp('-r', "./templates/baseLayout", ".")
 sh.mv("./baseLayout", newPackageDir)
 sh.cd(newPackageDir);
 sh.exec('pwd')
-const packageJsonTemplate = fs.readFileSync('./package.json')
+const packageJsonTemplate = fs.readFileSync('./template-package.json')
 const newPackageJson = JSON.stringify(packageJsonTemplate).replaceAll("__placeholder__", name);
 sh.echo(newPackageJson).to("./package.json")
 sh.exec("git init")
