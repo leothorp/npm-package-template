@@ -30,7 +30,10 @@ Steps taken
 ```
 9. add repo/author to package.json 
 10. make gh repo with github cli (assumes public desired, --private if not):
-gh repo create --source=. --remote=upstream --public --push
+
+gh repo create --source=. --public --push 
+
+gh repo create command reference: https://cli.github.com/manual/gh_repo_create
 
 11. for cli: 'bin' dir, entrypoint file/package.json entry
 12.  echo "{}" > .prettierrc
