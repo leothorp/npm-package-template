@@ -1,5 +1,5 @@
 {
-  "name": "npm-package-template",
+  "name": "@leothorp/npm-package-template",
   "version": "0.0.3",
   "description": "",
   "type": "module",
@@ -21,6 +21,7 @@
   },
   "keywords": [],
   "author": "leothorp",
+  "repo": "https://github.com/leothorp/npm-package-template",
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.18.6",

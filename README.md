@@ -1,4 +1,8 @@
-Notes/References
+baseline npm package example.
+
+
+
+notes/references:
 
 -ES6 module reference: https://medium.com/digio-australia/migrating-an-npm-package-to-use-es-modules-d59877963d61
 -uses conditional exports: https://nodejs.org/api/packages.html#conditional-exports
@@ -11,7 +15,7 @@ Steps taken
 1. create dir
 2. git init
 3. npm init
-4. edit package.json- license, semver (0.0.1), name, description
+4. edit package.json- license, semver (0.0.1), name (use scoped name if desired), description
 5. mkdir src dist && touch src/index.js
 6. touch .gitignore .npmignore
 6.5 add stuff to .gitignore (node_modules)
@@ -30,12 +34,14 @@ gh repo create --source=. --remote=upstream --public --push
 
 11. for cli: 'bin' dir, entrypoint file/package.json entry
 12.  echo "{}" > .prettierrc
-13. (assumes npm account exists) use bash_profile func npm-pub. example: npm-pub "new commit message"
+13. (assumes npm account exists) use bash_profile func npm-pub. 
+example: `npm-pub "new commit message"`
+
 function npm-pub() {
-git add .
-git commit -m $1
- npm version patch && \
- npm publish && \
- git push origin HEAD && \
- git push --tags
+    git add .
+    git commit -m $1
+    npm version patch && \
+    npm publish --access public && \
+    git push origin HEAD && \
+    git push --tags
 }
