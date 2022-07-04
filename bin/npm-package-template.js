@@ -27,4 +27,5 @@ const packageJsonTemplate = fs.readFileSync('./package.json', {encoding: 'utf-8'
 const newPackageJson = packageJsonTemplate.replaceAll("__name_placeholder__", name);
 sh.echo(newPackageJson).to("./package.json")
 sh.exec("git init")
+sh.exec("git add .; git commit -m 'init'")
 sh.cd("-");
