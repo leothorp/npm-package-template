@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import sh from 'shelljs';
+import * as url from 'url';
 // import packageJsonTemplate from "./templates/baseLayout.package.json"
 import fs from 'fs'
 import path from 'path'
