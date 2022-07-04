@@ -23,7 +23,8 @@ sh.mv(`${tmpDirPath}/baseLayout`, newPackageDir)
 sh.rm('-rf', tmpDirPath)
 sh.cd(newPackageDir);
 sh.exec('pwd')
-const packageJsonTemplate = fs.readFileSync('./template-package.json', {encoding: 'utf-8'})
-const newPackageJson = JSON.stringify(packageJsonTemplate).replaceAll("__placeholder__", name);
+const packageJsonTemplate = fs.readFileSync('./package.json', {encoding: 'utf-8'})
+const newPackageJson = packageJsonTemplate.replaceAll("__name_placeholder__", name);
 sh.echo(newPackageJson).to("./package.json")
 sh.exec("git init")
+sh.cd("-");
