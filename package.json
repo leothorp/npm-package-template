@@ -34,14 +34,13 @@
     "shelljs": "^0.8.5"
   },
   "files": [
-    "./src/**/*",
-    "./bin/**/*",
+    "src/*",
+    "bin/*",
     "index.js",
     "index.browser.js",
     "README.md"
   ],
   "bin": {
     "@leothorp/npm-package-template": "./bin/npm-package-template.js"
-  },
-  "directories": {"bin": "./bin"}
+  }
 }
