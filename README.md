@@ -1,4 +1,9 @@
-baseline npm package example.
+baseline npm package example/scaffolder.
+
+Usage: 
+```
+npm exec --prefer-online @leothorp/npm-package-template new-pkg-name
+```
 
 
 
