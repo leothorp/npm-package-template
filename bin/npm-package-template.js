@@ -1,8 +1,20 @@
 #!/usr/bin/env node
 
 import { main } from "../src/index.js";
-// import sh from 'shelljs';
+import sh from 'shelljs';
+import packageJsonTemplate from "./templates/baseLayout.package.json"
 
-// sh.mkdir('-p', `./`);
-console.log(process.argv)
-main()
+const name = process.argv[2]
+if (!name) {
+    console.log("name is required");
+    process.exit(1)
+}
+console.log('creating', name)
+const newPackageDir = `./${name}`
+// sh.mkdir('-p', newPackageDir);
+sh.cp('-r', "./templates/baseLayout", ".")
+sh.mv("./baseLayout", newPackageDir)
+sh.exec(`cd ${newPackageDir}`)
+const newPackageJson = JSON.stringify(packageJsonTemplate).replaceAll("__placeholder__", name);
+sh.echo(newPackageJson).to("./package.json")
+sh.exec("git init")

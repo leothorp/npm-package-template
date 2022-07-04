@@ -1,0 +1,33 @@
+{
+  "name": "__name_placeholder__",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/run.js"
+  },
+  "engines": {
+    "node": "^14 || ^16 || >=18"
+  },
+  "exports": {
+    ".": {
+      "browser": "./index.browser.js",
+      "default": "./index.js"
+    }
+  },
+  "browser": {
+    "./index.js": "./index.browser.js"
+  },
+  "keywords": [],
+  "author": "",
+  "repo": "",
+  "license": "MIT",
+  "devDependencies": {
+
+  },
+  "dependencies": {
+  },
+  "bin": {
+    "__name_placeholder__": "./bin/main.js"
+  }
+}
