@@ -5,7 +5,7 @@ import * as url from 'url';
 // import packageJsonTemplate from "./templates/baseLayout.package.json"
 import fs from 'fs'
 import path from 'path'
-const __filename = url.fileURLToPath(import.meta.url);
+
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const name = process.argv[2]
 if (!name) {
