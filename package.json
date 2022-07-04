@@ -32,6 +32,7 @@
     "nanoid": "^4.0.0",
     "shelljs": "^0.8.5"
   },
+  "files": ["./src/*", "./bin/*", "index.js", "index.browser.js", "README.md"],
   "bin": {
     "@leothorp/npm-package-template": "./bin/npm-package-template.js"
   }
