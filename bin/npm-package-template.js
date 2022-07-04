@@ -13,7 +13,7 @@ const newPackageDir = `./${name}`
 // sh.mkdir('-p', newPackageDir);
 sh.cp('-r', "./templates/baseLayout", ".")
 sh.mv("./baseLayout", newPackageDir)
-sh.exec(`cd ${newPackageDir}`)
+shell.cd(newPackageDir);
 const packageJsonTemplate = fs.readFileSync('./package.json')
 const newPackageJson = JSON.stringify(packageJsonTemplate).replaceAll("__placeholder__", name);
 sh.echo(newPackageJson).to("./package.json")
