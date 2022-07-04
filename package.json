@@ -1,6 +1,6 @@
 {
   "name": "@leothorp/npm-package-template",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "",
   "type": "module",
   "scripts": {
@@ -33,6 +33,6 @@
     "shelljs": "^0.8.5"
   },
   "bin": {
-    "@leothorp/npm-package-template":"./bin/npm-package-template.js"
+    "@leothorp/npm-package-template": "./bin/npm-package-template.js"
   }
 }
