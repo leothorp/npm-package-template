@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import sh from 'shelljs';
-import packageJsonTemplate from "./templates/baseLayout.package.json"
-
+// import packageJsonTemplate from "./templates/baseLayout.package.json"
+import fs from 'fs'
 const name = process.argv[2]
 if (!name) {
     console.log("name is required");
@@ -14,6 +14,7 @@ const newPackageDir = `./${name}`
 sh.cp('-r', "./templates/baseLayout", ".")
 sh.mv("./baseLayout", newPackageDir)
 sh.exec(`cd ${newPackageDir}`)
+const packageJsonTemplate = fs.readFileSync('./package.json')
 const newPackageJson = JSON.stringify(packageJsonTemplate).replaceAll("__placeholder__", name);
 sh.echo(newPackageJson).to("./package.json")
 sh.exec("git init")
