@@ -3,6 +3,7 @@
 import sh from 'shelljs';
 // import packageJsonTemplate from "./templates/baseLayout.package.json"
 import fs from 'fs'
+import path from 'path'
 const name = process.argv[2]
 if (!name) {
     console.log("name is required");
