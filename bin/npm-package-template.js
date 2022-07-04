@@ -11,8 +11,12 @@ if (!name) {
 console.log('creating', name)
 const newPackageDir = `./${name}`
 // sh.mkdir('-p', newPackageDir);
-sh.cp('-r', "./templates/baseLayout", ".")
-sh.mv("./baseLayout", newPackageDir)
+const tmpDirPath = fs.mkdtempSync(
+    path.join(__dirname, "tmp")
+  );
+sh.cp('-r', `${__dirname}/templates/baseLayout`, tmpDirPath)
+sh.mv(`${tmpDirPath}/baseLayout`, newPackageDir)
+sh.rm('rf', tmpDirPath)
 sh.cd(newPackageDir);
 sh.exec('pwd')
 const packageJsonTemplate = fs.readFileSync('./template-package.json')
