@@ -20,10 +20,10 @@ const tmpDirPath = fs.mkdtempSync(
   );
 sh.cp('-r', `${__dirname}/templates/baseLayout`, tmpDirPath)
 sh.mv(`${tmpDirPath}/baseLayout`, newPackageDir)
-sh.rm('rf', tmpDirPath)
+sh.rm('-rf', tmpDirPath)
 sh.cd(newPackageDir);
 sh.exec('pwd')
-const packageJsonTemplate = fs.readFileSync('./template-package.json')
+const packageJsonTemplate = fs.readFileSync('./template-package.json', {encoding: 'utf-8'})
 const newPackageJson = JSON.stringify(packageJsonTemplate).replaceAll("__placeholder__", name);
 sh.echo(newPackageJson).to("./package.json")
 sh.exec("git init")
