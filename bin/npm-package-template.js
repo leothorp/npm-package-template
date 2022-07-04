@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import { main } from "../src/index.js";
 import sh from 'shelljs';
 import packageJsonTemplate from "./templates/baseLayout.package.json"
 
