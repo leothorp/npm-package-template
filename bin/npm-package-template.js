@@ -5,7 +5,7 @@ import sh from 'shelljs';
 import fs from 'fs'
 const name = process.argv[2]
 if (!name) {
-    console.log("namee is required");
+    console.log("name is required");
     process.exit(1)
 }
 console.log('creating', name)
